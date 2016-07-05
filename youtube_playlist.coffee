@@ -50,10 +50,10 @@ add_player = ($) ->
 
   # Video list
   ids = []
-  url = new RegExp 'https?://(www.)?youtube.com/'
+  url = new RegExp 'https?://(www.)?youtube.com/watch'
 
-  $('a[href^="http"]').each ->
-    return unless $(this).attr('href').match url
+  $('a').each ->
+    return unless $(this).prop('href').match url
 
     id = this.href.
       replace(/^.*v=/, '').
